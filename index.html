@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Krishna Pal Deora | Full Stack Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts for different themes -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:wght@400;600;700;800&family=Cinzel:wght@400;600;700;800&family=Montserrat:wght@300;400;600&family=Laila:wght@400;600;700&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+    
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+              royal: ['Cinzel', 'serif'], // Theme 1
+              udaipur: ['Montserrat', 'sans-serif'], // Theme 2 (Lake City)
+              desert: ['Playfair Display', 'serif'], // Theme 3 (Jaisalmer)
+              folk: ['Laila', 'sans-serif'], // Theme 4
+              vintage: ['IM Fell English', 'serif'], // Theme 5
+            },
+            colors: {
+              skin: {
+                base: 'var(--color-bg-base)',
+                card: 'var(--color-bg-card)',
+                text: 'var(--color-text-base)',
+                muted: 'var(--color-text-muted)',
+                primary: 'var(--color-primary)',
+                secondary: 'var(--color-secondary)',
+                accent: 'var(--color-accent)',
+                border: 'var(--color-border)',
+              }
+            },
+            backgroundImage: {
+              'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      :root {
+        --transition-speed: 0.5s;
+      }
+
+      body {
+        transition: background-color var(--transition-speed), color var(--transition-speed);
+      }
+
+      /* THEME 1: ROYAL JHAROKHA (Mewar/Jaipur Style) */
+      .theme-royal {
+        --font-heading: 'Cinzel', serif;
+        --font-body: 'Playfair Display', serif;
+        --color-bg-base: #fff7ed; /* Orange-50 */
+        --color-bg-card: #ffffff;
+        --color-text-base: #451a03; /* Amber-950 */
+        --color-text-muted: #78350f;
+        --color-primary: #9f1239; /* Rose-800 */
+        --color-secondary: #b45309; /* Amber-700 */
+        --color-accent: #f59e0b; /* Amber-500 */
+        --color-border: #b45309;
+        --pattern-opacity: 0.05;
+        --border-radius: 0.5rem;
+      }
+      .theme-royal.dark {
+        --color-bg-base: #1e1b4b; /* Indigo-950 */
+        --color-bg-card: #172554; /* Blue-950 */
+        --color-text-base: #fef3c7; /* Amber-100 */
+        --color-text-muted: #94a3b8;
+        --color-primary: #fbbf24; /* Amber-400 */
+        --color-secondary: #be123c; /* Rose-700 */
+        --color-accent: #fcd34d;
+        --color-border: #fbbf24;
+      }
+
+      /* THEME 2: UDAIPUR (Lake City - White Marble & Blue Water) */
+      .theme-udaipur {
+        --font-heading: 'Montserrat', sans-serif;
+        --font-body: 'Inter', sans-serif;
+        --color-bg-base: #f8fafc; /* Slate-50 (Marble) */
+        --color-bg-card: #ffffff;
+        --color-text-base: #0f172a; /* Slate-900 */
+        --color-text-muted: #64748b;
+        --color-primary: #0ea5e9; /* Sky-500 (Lake) */
+        --color-secondary: #0284c7; /* Sky-600 */
+        --color-accent: #e2e8f0; /* Slate-200 */
+        --color-border: #bae6fd;
+        --border-radius: 1rem;
+      }
+      .theme-udaipur.dark {
+        --color-bg-base: #0c4a6e; /* Sky-950 */
+        --color-bg-card: #075985; /* Sky-800 */
+        --color-text-base: #f0f9ff;
+        --color-text-muted: #bae6fd;
+        --color-primary: #38bdf8; /* Sky-400 */
+        --color-secondary: #7dd3fc;
+        --color-accent: #0369a1;
+        --color-border: #0ea5e9;
+      }
+
+      /* THEME 3: JAISALMER (Golden City - Sandstone & Gold) */
+      .theme-desert {
+        --font-heading: 'Playfair Display', serif;
+        --font-body: 'Inter', sans-serif;
+        --color-bg-base: #fffbeb; /* Amber-50 (Sandstone) */
+        --color-bg-card: #ffffff;
+        --color-text-base: #451a03; /* Amber-950 */
+        --color-text-muted: #92400e; /* Amber-800 */
+        --color-primary: #d97706; /* Amber-600 */
+        --color-secondary: #b45309; /* Amber-700 */
+        --color-accent: #fcd34d; /* Amber-300 */
+        --color-border: #fbbf24;
+        --border-radius: 0.5rem;
+      }
+      .theme-desert.dark {
+        --color-bg-base: #271c19; /* Dark Sand */
+        --color-bg-card: #451a03; /* Amber-950 */
+        --color-text-base: #fef3c7; /* Amber-100 */
+        --color-text-muted: #d97706;
+        --color-primary: #fbbf24; /* Amber-400 */
+        --color-secondary: #f59e0b;
+        --color-accent: #78350f;
+        --color-border: #d97706;
+      }
+
+      /* THEME 4: VIBRANT KATHPUTLI */
+      .theme-folk {
+        --font-heading: 'Laila', sans-serif;
+        --font-body: 'Laila', sans-serif;
+        --color-bg-base: #fefce8; /* Yellow-50 */
+        --color-bg-card: #ffffff;
+        --color-text-base: #be123c; /* Rose-700 */
+        --color-text-muted: #059669; /* Emerald-600 */
+        --color-primary: #db2777; /* Pink-600 */
+        --color-secondary: #047857; /* Emerald-700 */
+        --color-accent: #eab308; /* Yellow-500 */
+        --color-border: #db2777;
+        --border-radius: 1rem;
+      }
+      .theme-folk.dark {
+        --color-bg-base: #064e3b; /* Emerald-900 */
+        --color-bg-card: #065f46;
+        --color-text-base: #fdf4ff;
+        --color-text-muted: #fcd34d;
+        --color-primary: #f472b6; /* Pink-400 */
+        --color-secondary: #34d399;
+        --color-accent: #fde047;
+        --color-border: #f472b6;
+      }
+
+      /* THEME 5: VINTAGE MINIATURE */
+      .theme-vintage {
+        --font-heading: 'IM Fell English', serif;
+        --font-body: 'IM Fell English', serif;
+        --color-bg-base: #f5f5dc; /* Beige */
+        --color-bg-card: #e8e8d0;
+        --color-text-base: #1c1917; /* Stone-900 */
+        --color-text-muted: #57534e;
+        --color-primary: #15803d; /* Green-700 */
+        --color-secondary: #854d0e; /* Yellow-800 */
+        --color-accent: #b91c1c; /* Red-700 */
+        --color-border: #a8a29e;
+        --border-radius: 2px;
+      }
+      .theme-vintage.dark {
+        --color-bg-base: #1c1917; /* Stone-900 */
+        --color-bg-card: #292524;
+        --color-text-base: #e7e5e4;
+        --color-text-muted: #a8a29e;
+        --color-primary: #86efac; /* Green-300 */
+        --color-secondary: #d97706;
+        --color-accent: #f87171;
+        --color-border: #44403c;
+      }
+
+      /* Jali Pattern & Textures */
+      .pattern-overlay {
+        background-color: transparent;
+        opacity: 0.4;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        pointer-events: none;
+        z-index: -1;
+      }
+      
+      .theme-royal .pattern-overlay {
+        background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23b45309' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      }
+      .theme-udaipur .pattern-overlay {
+         /* Waves / Water Texture for Lake City */
+         background-image: url("data:image/svg+xml,%3Csvg width='40' height='10' viewBox='0 0 40 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 5 Q 10 0 20 5 T 40 5' stroke='%230ea5e9' stroke-opacity='0.1' fill='none' /%3E%3C/svg%3E");
+         background-size: 40px 20px;
+         opacity: 0.3;
+      }
+      .theme-desert .pattern-overlay {
+        /* Sandstone Texture */
+        background-image: url("https://www.transparenttextures.com/patterns/sandpaper.png");
+        opacity: 0.3;
+      }
+      .theme-folk .pattern-overlay {
+        /* Dots / Bandhani */
+        background-image: radial-gradient(currentColor 1px, transparent 1px);
+        background-size: 20px 20px;
+        color: var(--color-primary);
+        opacity: 0.1;
+      }
+      .theme-vintage .pattern-overlay {
+        /* Paper Grain */
+        background-image: url("https://www.transparenttextures.com/patterns/old-map.png");
+        opacity: 0.4;
+      }
+      
+      /* Utils */
+      .clip-arch {
+        clip-path: polygon(0% 100%, 0% 20%, 50% 0%, 100% 20%, 100% 100%);
+      }
+      
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: var(--color-bg-base); }
+      ::-webkit-scrollbar-thumb { background: var(--color-primary); border-radius: 4px; }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "recharts": "https://aistudiocdn.com/recharts@^3.4.1",
+    "react-dom/client": "https://aistudiocdn.com/react-dom@^19.2.0/client",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+</head>
+  <body class="bg-skin-base text-skin-text transition-colors duration-500 font-sans antialiased selection:bg-skin-primary selection:text-white">
+    <div id="root"></div>
+  </body>
+</html>
